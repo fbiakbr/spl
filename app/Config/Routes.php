@@ -30,7 +30,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pemakaian::index');
-$routes->get('/input', 'Pemakaian::index');
+$routes->get('/input', 'Pemakaian::input_pemakaian');
 $routes->get('/data_pemakaian', 'Pemakaian::data_pemakaian');
 
 /*

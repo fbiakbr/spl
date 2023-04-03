@@ -10,13 +10,21 @@ class Pemakaian extends BaseController
 {
     public function index()
     {
+        $data = [
+            'title' => "Sistem Pemakaian Lab SMK Ma'arif NU Tirto",
+            'session' => session(),
+        ];
+        return view('pemakaian/index', $data);
+    }
+    public function input_pemakaian()
+    {
         $siswa = new SiswaModel();
         $data = [
             'title' => 'Input Data Pemakaian Lab',
             'siswa' => $siswa->findAll(),
             'session' => session(),
         ];
-        return view('pemakaian/index', $data);
+        return view('pemakaian/input', $data);
     }
     public function save()
     {

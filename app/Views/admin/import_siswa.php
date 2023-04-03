@@ -6,7 +6,7 @@
             <div class="card-body">
 
                 <h4 class="card-title">Import Excel Data Siswa</h4>
-                <p class="card-title-desc">
+                <p class="card-title-desc text-danger">
                     *Pastikan NIS yang diimport tidak ada yang sama dengan yang sudah ada di database.<br>
                     *Apabila NIS yang diimport sudah ada di database, maka data akan diupdate.<br>
                     *Pastikan file yang diupload sesuai dengan format yang telah ditentukan.
