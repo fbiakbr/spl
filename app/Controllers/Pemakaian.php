@@ -34,6 +34,17 @@ class Pemakaian extends BaseController
         ]);
         // set flashdata to show alert after redirect
         session()->setFlashdata('success', 'Terima kasih telah mengisi data pemakaian lab :)');
-        return redirect()->to('/');
+        return redirect()->to('/data_pemakaian');
+    }
+    public function data_pemakaian()
+    {
+        $pemakaian = new PemakaianModel();
+        // only show data from current date
+        $data = [
+            'title' => 'Data Pemakaian Lab',
+            'session' => session(),
+            'pemakaian' => $pemakaian->where('tanggal', date('Y-m-d'))->findAll(),
+        ];
+        return view('pemakaian/data_pemakaian', $data);
     }
 }

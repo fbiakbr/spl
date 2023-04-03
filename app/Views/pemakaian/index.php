@@ -36,13 +36,6 @@
                 <div class="col-xl-8">
                     <div class="card">
                         <div class="card-body">
-                            <?php if (session()->getFlashdata('success')) : ?>
-                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                    <i class="mdi mdi-bullseye-arrow me-2"></i>
-                                    <?= session()->getFlashdata('success') ?>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            <?php endif; ?>
                             <div class="card-title text-center">
                                 <img src="<?= base_url() ?>assets/images/smk.png" alt="">
                             </div>
@@ -86,7 +79,7 @@
                                         <div class="mb-3">
                                             <label for="lab" class="form-label">Lab</label>
                                             <select class="form-select" aria-label="Default select example" id="lab" name="lab" required>
-                                                <option selected>Pilih Lab</option>
+                                                <option value="">Pilih Lab</option>
                                                 <option value="Lab TKJ L6">Lab TKJ L6</option>
                                             </select>
                                         </div>
