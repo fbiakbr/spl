@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Tambah Siswa</h4>
-                <form action="<?= base_url() ?>admin/save_siswa" method="post">
+                <form action="<?= base_url() ?>admin/save_siswa" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="nis">NIS</label>

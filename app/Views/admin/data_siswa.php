@@ -4,9 +4,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <?php if (session()->getFlashdata('success')) : ?>
+                <?php if (session()->getFlashdata('message')) : ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <?= session()->getFlashdata('success'); ?>
+                        <?= session()->getFlashdata('message'); ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>

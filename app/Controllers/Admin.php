@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use App\Models\PemakaianModel;
+use LDAP\Result;
 
 class Admin extends BaseController
 {
@@ -43,6 +44,7 @@ class Admin extends BaseController
             'nama_siswa' => $this->request->getVar('nama_siswa'),
             'kelas' => $this->request->getVar('kelas'),
         ]);
+        session()->setFlashdata('message', 'Data siswa berhasil ditambahkan :)');
         return redirect()->to('/admin/data_siswa');
     }
     public function edit_siswa($nis)
@@ -56,10 +58,63 @@ class Admin extends BaseController
         ];
         return view('admin/edit_siswa', $data);
     }
+    public function update_siswa($nis)
+    {
+        $siswa = new SiswaModel();
+        $siswa->save([
+            'nis' => $nis,
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'kelas' => $this->request->getVar('kelas'),
+        ]);
+        return redirect()->to('/admin/data_siswa');
+    }
     public function hapus_siswa($nis)
     {
         $siswa = new SiswaModel();
         $siswa->delete($nis);
+        return redirect()->to('/admin/data_siswa');
+    }
+    public function import_siswa()
+    {
+        $data = [
+            'title' => 'Import Siswa',
+            'session' => session(),
+            'validation' => \Config\Services::validation(),
+        ];
+        return view('admin/import_siswa', $data);
+    }
+    public function save_import_siswa()
+    {
+        $excel = $this->request->getFile('excel');
+        $name = $excel->getRandomName();
+        $excel->move('uploads', $name);
+        $ext = $excel->getClientExtension();
+        if ($ext == 'xlsx') {
+            $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+        } else {
+            $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+        }
+        $spreadsheet = $reader->load('uploads/' . $name);
+        $data = $spreadsheet->getActiveSheet()->toArray();
+        array_shift($data);
+        $siswa = new SiswaModel();
+        foreach ($data as $row) {
+            $check = $siswa->find($row[0]);
+            if ($check) {
+                $siswa->save([
+                    'nis' => $row[0],
+                    'nama_siswa' => $row[1],
+                    'kelas' => $row[2],
+                ]);
+            } else {
+                $siswa->insert([
+                    'nis' => $row[0],
+                    'nama_siswa' => $row[1],
+                    'kelas' => $row[2],
+                ]);
+            }
+        }
+        session()->setFlashdata('message', 'Data berhasil diimport');
         return redirect()->to('/admin/data_siswa');
     }
     public function daftar_pemakaian()
