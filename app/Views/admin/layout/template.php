@@ -22,6 +22,9 @@
     <!-- Responsive datatable examples -->
     <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Sweet Alert-->
+    <link href="<?= base_url() ?>/assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -240,6 +243,9 @@
 
     <!-- Datatable init js -->
     <script src="<?= base_url() ?>/assets/js/pages/datatables.init.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="<?= base_url() ?>/assets/js/sweetalert2.all.min.js"></script>
 </body>
 
 

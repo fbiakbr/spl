@@ -33,15 +33,21 @@
                                 <td><?= $s['kelas']; ?></td>
                                 <td style="width: 10px;">
                                     <a href="<?= base_url('admin/edit_siswa/' . $s['nis']) ?>" class="btn btn-warning"><i class="bx bx-edit"></i></a>
-                                    <a href="<?= base_url('admin/hapus_siswa/' . $s['nis']) ?>" class="btn btn-danger"><i class="bx bx-trash"></i></a>
+                                    <a href="<?= base_url('admin/hapus_siswa/' . $s['nis']) ?>" class="btn btn-danger" onclick="showConfirm()"><i class="bx bx-trash"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div> <!-- end col -->
 </div>
+<script>
+    function showConfirm() {
+        if (!confirm("Apakah anda yakin ingin menghapus data ini?")) {
+            event.preventDefault();
+        }
+    }
+</script>
 <?= $this->endSection() ?>

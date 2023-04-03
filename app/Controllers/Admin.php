@@ -38,27 +38,29 @@ class Admin extends BaseController
     public function save_siswa()
     {
         $siswa = new SiswaModel();
+        $siswa->insert([
+            'nis' => $this->request->getVar('nis'),
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'kelas' => $this->request->getVar('kelas'),
+        ]);
+        return redirect()->to('/admin/data_siswa');
+    }
+    public function edit_siswa($nis)
+    {
+        $siswa = new SiswaModel();
         $data = [
-            'nis' => $this->request->getPost('nis'),
-            'nama_siswa' => $this->request->getPost('nama_siswa'),
-            'kelas' => $this->request->getPost('kelas'),
+            'title' => 'Edit Siswa',
+            'session' => session(),
+            'validation' => \Config\Services::validation(),
+            'siswa' => $siswa->find($nis),
         ];
-        if ($this->validate([
-            'nis' => [
-                'rules' => 'required|is_unique[siswa.nis]',
-                'errors' => [
-                    'required' => 'NIS harus diisi',
-                    'is_unique' => 'NIS sudah terdaftar',
-                ],
-            ]
-        ])) {
-            $siswa->insert($data);
-            session()->setFlashdata('success', 'Data siswa berhasil ditambahkan');
-            return redirect()->to('/admin/data_siswa');
-        } else {
-            session()->setFlashdata('error', 'NIS sudah terdaftar');
-            return redirect()->to('/admin/tambah_siswa')->withInput();
-        }
+        return view('admin/edit_siswa', $data);
+    }
+    public function hapus_siswa($nis)
+    {
+        $siswa = new SiswaModel();
+        $siswa->delete($nis);
+        return redirect()->to('/admin/data_siswa');
     }
     public function daftar_pemakaian()
     {
