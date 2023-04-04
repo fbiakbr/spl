@@ -32,28 +32,24 @@
     const ctx = document.getElementById('myChart');
     const dataSiswa = <?= json_encode($dataSiswa) ?>;
     // console.log(dataSiswa);
-    const xtkj1 = dataSiswa.filter((item) => item.kelas == 'X TKJ 1');
-    const xtkj2 = dataSiswa.filter((item) => item.kelas == 'X TKJ 2');
-    const xtkj3 = dataSiswa.filter((item) => item.kelas == 'X TKJ 3');
-    const xitkj1 = dataSiswa.filter((item) => item.kelas == 'XI TKJ 1');
-    const xitkj2 = dataSiswa.filter((item) => item.kelas == 'XI TKJ 2');
-    const xiitkj1 = dataSiswa.filter((item) => item.kelas == 'XII TKJ 1');
-    const xiitkj2 = dataSiswa.filter((item) => item.kelas == 'XII TKJ 2');
+    const labels1 = dataSiswa.map((item) => item.kelas);
+    // console.log(labels1);
+    const filterKelas = labels1.filter((item, index) => {
+        return labels1.indexOf(item) === index;
+    });
+    // console.log(filterKelas);
+    const data  = [];
+    filterKelas.forEach((item) => {
+        const filterByKelas = dataSiswa.filter((item2) => item2.kelas == item);
+        data.push(filterByKelas.length);
+    });
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['X TKJ 1', 'X TKJ 2', 'X TKJ 3', 'XI TKJ 1', 'XI TKJ 2', 'XII TKJ 1', 'XII TKJ 2'],
+            labels: filterKelas,
             datasets: [{
                 label: 'Data Siswa',
-                data: [
-                    xtkj1.length,
-                    xtkj2.length,
-                    xtkj3.length,
-                    xitkj1.length,
-                    xitkj2.length,
-                    xiitkj1.length,
-                    xiitkj2.length
-                ],
+                data: data,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -79,7 +75,6 @@
     console.log(dataPemakaian);
     
     const tanggal = dataPemakaian.map((item) => item.tanggal);
-    // filter tanggal by month
     const filterByMonth = (month) => {
         return tanggal.filter((item) => {
             const date = new Date(item);
@@ -89,18 +84,22 @@
     // get data pemakaian by month
     const dataPemakaianByMonth = [];
     for (let i = 0; i < 12; i++) {
-        const date = new Date();
-        date.setMonth(date.getMonth() - i);
-        const data = filterByMonth(date.getMonth());
-        dataPemakaianByMonth.push(data.length);
+        dataPemakaianByMonth.push(filterByMonth(i).length);
     }
-    // get label by month
-    const labels = [];
-    for (let i = 0; i < 12; i++) {
-        const date = new Date();
-        date.setMonth(date.getMonth() - i);
-        labels.push(date.toLocaleString('default', { month: 'long' }));
-    }
+    const labels = [
+        'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    ];
     console.log(labels);
     const myPemakaian = new Chart(pemakaian, {
         type: 'line',
