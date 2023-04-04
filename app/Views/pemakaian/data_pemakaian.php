@@ -37,16 +37,9 @@
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
-        <div class="container">
+        <div class="container mt-3">
             <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh;">
                 <div class="col-xl-12">
-                    <?php if (session()->getFlashdata('success')) : ?>
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                            <i class="mdi mdi-bullseye-arrow me-2"></i>
-                            <?= session()->getFlashdata('success') ?>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    <?php endif; ?>
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title text-center">Data Pemakaian Lab Tanggal <span id="tgl"></span></h4>
@@ -71,7 +64,7 @@
                                                 <td><?= $p['nis'] ?></td>
                                                 <td><?= $p['nama_siswa'] ?></td>
                                                 <td><?= $p['kelas'] ?></td>
-                                                <td><?= $p['tanggal'] ?></td>
+                                                <td><?= date('d F Y', strtotime($p['tanggal'])) ?></td>
                                                 <td><?= $p['jam'] ?></td>
                                                 <td><?= $p['lab'] ?></td>
                                             </tr>
@@ -114,50 +107,50 @@
         tgl.innerHTML = day + ' ' + monthAlias[month] + ' ' + year;
     </script>
     <!-- JAVASCRIPT -->
-    <script src="<?= base_url() ?>assets/libs/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url('assets/libs/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/metismenu/metisMenu.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/node-waves/waves.min.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/js/app.js"></script>
+    <script src="<?= base_url('assets/js/app.js') ?>"></script>
     <!-- JAVASCRIPT -->
-    <script src="<?= base_url() ?>assets/libs/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url('assets/libs/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/metismenu/metisMenu.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/node-waves/waves.min.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/libs/select2/js/select2.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/%40chenfengyuan/datepicker/datepicker.min.js"></script>
+    <script src="<?= base_url('assets/libs/select2/js/select2.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/spectrum-colorpicker2/spectrum.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js') ?>"></script>
 
     <!-- form advanced init -->
-    <script src="<?= base_url() ?>assets/js/pages/form-advanced.init.js"></script>
+    <script src="<?= base_url('assets/js/pages/form-advanced.init.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/js/app.js"></script>
+    <script src="<?= base_url('assets/js/app.js') ?>"></script>
     <!-- Required datatable js -->
-    <script src="<?= base_url() ?>/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
     <!-- Buttons examples -->
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/jszip/jszip.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/pdfmake/build/pdfmake.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/pdfmake/build/vfs_fonts.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/jszip/jszip.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/pdfmake/build/pdfmake.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/pdfmake/build/vfs_fonts.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-buttons/js/buttons.html5.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-buttons/js/buttons.print.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js') ?>"></script>
     <!-- Responsive examples -->
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') ?>"></script>
 
     <!-- Datatable init js -->
-    <script src="<?= base_url() ?>/assets/js/pages/datatables.init.js"></script>
+    <script src="<?= base_url('/assets/js/pages/datatables.init.js') ?>"></script>
 
 </body>
 

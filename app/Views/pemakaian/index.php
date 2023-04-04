@@ -57,6 +57,24 @@
                                                     <div>
                                                         <div class="event-date">
                                                             <div class="text-primary mb-1">I</div>
+                                                            <h5 class="mb-4">Buka Aplikasi</h5>
+                                                        </div>
+                                                        <div class="event-down-icon">
+                                                            <i class="bx bx-globe h1 text-primary down-arrow-icon"></i>
+                                                        </div>
+                                                        <div class="mt-3 px-3">
+                                                            <p class="text-muted">
+                                                                Buka aplikasi dengan klik link di bawah ini.
+                                                                <br>
+                                                                <a class="btn btn-primary" href="http://localhost:8080/input">Aplikasi SPL</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item event-list">
+                                                    <div>
+                                                        <div class="event-date">
+                                                            <div class="text-primary mb-1">II</div>
                                                             <h5 class="mb-4">Input NIS</h5>
                                                         </div>
                                                         <div class="event-down-icon">
@@ -72,7 +90,7 @@
                                                 <div class="item event-list">
                                                     <div>
                                                         <div class="event-date">
-                                                            <div class="text-primary mb-1">II</div>
+                                                            <div class="text-primary mb-1">III</div>
                                                             <h5 class="mb-4">
                                                                 Cek Data Diri
                                                             </h5>
@@ -90,7 +108,7 @@
                                                 <div class="item event-list">
                                                     <div>
                                                         <div class="event-date">
-                                                            <div class="text-primary mb-1">III</div>
+                                                            <div class="text-primary mb-1">IV</div>
                                                             <h5 class="mb-4">
                                                                 Pilih Lab
                                                             </h5>
@@ -108,7 +126,7 @@
                                                 <div class="item event-list">
                                                     <div>
                                                         <div class="event-date">
-                                                            <div class="text-primary mb-1">IV</div>
+                                                            <div class="text-primary mb-1">V</div>
                                                             <h5 class="mb-4">
                                                                 Input Nomor PC
                                                             </h5>
@@ -126,7 +144,7 @@
                                                 <div class="item event-list">
                                                     <div>
                                                         <div class="event-date">
-                                                            <div class="text-primary mb-1">V</div>
+                                                            <div class="text-primary mb-1">VI</div>
                                                             <h5 class="mb-4">
                                                                 Input Materi Praktikum
                                                             </h5>
@@ -144,7 +162,7 @@
                                                 <div class="item event-list">
                                                     <div>
                                                         <div class="event-date">
-                                                            <div class="text-primary mb-1">VI</div>
+                                                            <div class="text-primary mb-1">VII</div>
                                                             <h5 class="mb-4">
                                                                 Submit Data
                                                             </h5>
@@ -159,6 +177,24 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="item event-list">
+                                                    <div>
+                                                        <div class="event-date">
+                                                            <div class="text-primary mb-1">VIII</div>
+                                                            <h5 class="mb-4">
+                                                                Cek Data Pemakaian
+                                                            </h5>
+                                                        </div>
+                                                        <div class="event-down-icon">
+                                                            <i class="bx bx-check-shield h1 text-primary down-arrow-icon"></i>
+                                                        </div>
+                                                        <div class="mt-3 px-3">
+                                                            <p class="text-muted">
+                                                                Cek data pemakaian yang telah diinput. Jika ada kesalahan, silahkan hubungi admin.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -167,6 +203,17 @@
                             </div>
                         </div>
                         <!-- end row -->
+                        <div class="row text-center">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p>
+                                            Copyright &copy; <?= date('Y') ?> <a href="" target="_blank" class="text-primary">SMK Ma'arif NU Tirto</a>. All Rights Reserved.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div> <!-- container-fluid -->
                 
                 <!-- End Page-content -->

@@ -28,7 +28,6 @@ class Pemakaian extends BaseController
     }
     public function save()
     {
-        // insert data from form to database
         $pemakaian = new PemakaianModel();
         $pemakaian->insert([
             'nis' => $this->request->getPost('nis'),
@@ -40,14 +39,11 @@ class Pemakaian extends BaseController
             'no_pc' => $this->request->getPost('no_pc'),
             'materi_praktek' => $this->request->getPost('materi_praktek'),
         ]);
-        // set flashdata to show alert after redirect
-        session()->setFlashdata('success', 'Terima kasih telah mengisi data pemakaian lab :)');
-        return redirect()->to('/data_pemakaian');
+        return redirect()->to(base_url('/data_pemakaian'));
     }
     public function data_pemakaian()
     {
         $pemakaian = new PemakaianModel();
-        // only show data from current date
         $data = [
             'title' => 'Data Pemakaian Lab',
             'session' => session(),

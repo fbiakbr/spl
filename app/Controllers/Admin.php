@@ -11,9 +11,13 @@ class Admin extends BaseController
 {
     public function index()
     {
+        $siswa = new SiswaModel();
+        $pemakaian = new PemakaianModel();
         $data = [
             'title' => 'Dashboard',
             'session' => session(),
+            'dataSiswa' => $siswa->findAll(),
+            'dataPemakaian' => $pemakaian->findAll(),
         ];
         return view('admin/index', $data);
     }
@@ -117,14 +121,14 @@ class Admin extends BaseController
         session()->setFlashdata('message', 'Data berhasil diimport');
         return redirect()->to('/admin/data_siswa');
     }
-    public function daftar_pemakaian()
+    public function laporan_pemakaian()
     {
         $pemakaian = new PemakaianModel();
         $data = [
-            'title' => 'Daftar Pemakaian',
+            'title' => 'Laporan Pemakaian',
             'session' => session(),
             'pemakaian' => $pemakaian->findAll(),
         ];
-        return view('admin/daftar_pemakaian', $data);
+        return view('admin/laporan_pemakaian', $data);
     }
 }

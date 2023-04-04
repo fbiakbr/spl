@@ -7,20 +7,20 @@
     <title><?= $title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.ico') ?>">
 
     <!-- Bootstrap Css -->
-    <link href="<?= base_url() ?>assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url() ?>assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url() ?>assets/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url() ?>assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url() ?>assets/libs/%40chenfengyuan/datepicker/datepicker.min.css">
+    <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/libs/spectrum-colorpicker2/spectrum.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') ?>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('assets/libs/%40chenfengyuan/datepicker/datepicker.min.css') ?>">
     <!-- Icons Css -->
-    <link href="<?= base_url() ?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/icons.min.css') ?>" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="<?= base_url() ?>assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>assets/css/sweetalert2.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/app.min.css') ?>" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/sweetalert2.min.css') ?>" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -133,7 +133,7 @@
         }, 1000);
 
         const dataSiswa = <?= json_encode($siswa) ?>;
-        // console.log(dataSiswa);
+        console.log(dataSiswa);
         const nis = document.querySelector("#nis");
         const namaSiswa = document.querySelector("#nama_siswa");
         const kelas = document.querySelector("#kelas");
@@ -160,42 +160,46 @@
                     text: 'NIS tidak ditemukan!',
                 })
             } else {
+                e.preventDefault();
                 Swal.fire({
                     icon: 'success',
                     title: 'Berhasil!',
-                    text: 'Data berhasil ditambahkan!',
+                    text: 'Terima kasih telah mengisi pemakaian lab :)',
+                }).then(function() {
+                    form.submit();
                 })
+                
             }
         });
     </script>
     <!-- JAVASCRIPT -->
-    <script src="<?= base_url() ?>assets/libs/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url('assets/libs/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/metismenu/metisMenu.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/node-waves/waves.min.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/js/app.js"></script>
+    <script src="<?= base_url('assets/js/app.js') ?>"></script>
     <!-- JAVASCRIPT -->
-    <script src="<?= base_url() ?>assets/libs/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url('assets/libs/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/metismenu/metisMenu.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/simplebar/simplebar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/node-waves/waves.min.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/libs/select2/js/select2.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/%40chenfengyuan/datepicker/datepicker.min.js"></script>
+    <script src="<?= base_url('assets/libs/select2/js/select2.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/spectrum-colorpicker2/spectrum.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') ?>"></script>
+    <script src="<?= base_url('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js') ?>"></script>
 
     <!-- form advanced init -->
-    <script src="<?= base_url() ?>assets/js/pages/form-advanced.init.js"></script>
+    <script src="<?= base_url('assets/js/pages/form-advanced.init.js') ?>"></script>
 
-    <script src="<?= base_url() ?>assets/js/app.js"></script>
-    <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url('assets/js/app.js') ?>"></script>
+    <script src="<?= base_url('assets/js/sweetalert2.all.min.js') ?>"></script>
 
 </body>
 
