@@ -23,6 +23,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h1 class="card-title text-center">Statistik Harian Pemakaian Lab</h1>
+                                <canvas id="myDaily"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -38,7 +48,7 @@
         return labels1.indexOf(item) === index;
     });
     // console.log(filterKelas);
-    const data  = [];
+    const data = [];
     filterKelas.forEach((item) => {
         const filterByKelas = dataSiswa.filter((item2) => item2.kelas == item);
         data.push(filterByKelas.length);
@@ -72,8 +82,8 @@
 
     const pemakaian = document.getElementById('myPemakaian');
     const dataPemakaian = <?= json_encode($dataPemakaian) ?>;
-    console.log(dataPemakaian);
-    
+    // console.log(dataPemakaian);
+
     const tanggal = dataPemakaian.map((item) => item.tanggal);
     const filterByMonth = (month) => {
         return tanggal.filter((item) => {
@@ -100,7 +110,7 @@
         'November',
         'Desember'
     ];
-    console.log(labels);
+    // console.log(labels);
     const myPemakaian = new Chart(pemakaian, {
         type: 'line',
         data: {
@@ -120,5 +130,52 @@
             }]
         }
     });
+
+    const daily = document.getElementById('myDaily');
+    const dailyPemakaian = <?= json_encode($dailyPemakaian) ?>;
+    // console.log(dailyPemakaian);
+    const dataKelas = dailyPemakaian.map((item) => item.kelas);
+    // filter data kelas by unique
+    const filterKelas2 = dataKelas.filter((item, index) => {
+        return dataKelas.indexOf(item) === index;
+    });
+    // console.log(filterKelas2);
+    const dataPemakaianByKelas = [];
+    filterKelas2.forEach((item) => {
+        const filterByKelas = dailyPemakaian.filter((item2) => item2.kelas == item);
+        dataPemakaianByKelas.push(filterByKelas.length);
+    });
+    console.log(dataPemakaianByKelas);
+    // console.log(filterKelas2);
+    const dailyData = {
+        labels: filterKelas2,
+        datasets: [{
+            label: 'Data Pemakaian Lab',
+            data: dataPemakaianByKelas,
+            // set min value with 0 and max value with 10
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    }
+    const myDaily = new Chart(daily, {
+        type: 'line',
+        data: dailyData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                }
+            },
+        }
+    })
 </script>
 <?= $this->endSection() ?>

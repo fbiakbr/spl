@@ -18,6 +18,7 @@ class Admin extends BaseController
             'session' => session(),
             'dataSiswa' => $siswa->findAll(),
             'dataPemakaian' => $pemakaian->findAll(),
+            'dailyPemakaian' => $pemakaian->where('tanggal', date('Y-m-d'))->findAll(),
         ];
         return view('admin/index', $data);
     }
