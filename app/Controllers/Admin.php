@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use App\Models\PemakaianModel;
+use App\Models\UsersModel;
+use Faker\Provider\Base;
 use LDAP\Result;
 
 class Admin extends BaseController
@@ -71,6 +73,7 @@ class Admin extends BaseController
             'nama_siswa' => $this->request->getVar('nama_siswa'),
             'kelas' => $this->request->getVar('kelas'),
         ]);
+        session()->setFlashdata('message', 'Data siswa berhasil diubah.');
         return redirect()->to('/admin/data_siswa');
     }
     public function hapus_siswa($nis)
@@ -131,5 +134,56 @@ class Admin extends BaseController
             'pemakaian' => $pemakaian->findAll(),
         ];
         return view('admin/laporan_pemakaian', $data);
+    }
+    public function hapus_pemakaian($id)
+    {
+        $pemakaian = new PemakaianModel();
+        $pemakaian->delete($id);
+        return redirect()->to(base_url('/admin/laporan_pemakaian'));
+    }
+    public function edit_pemakaian($id_pemakaian)
+    {
+        $pemakaian = new PemakaianModel();
+        $data = [
+            'title' => 'Edit Pemakaian',
+            'session' => session(),
+            'validation' => \Config\Services::validation(),
+            'pemakaian' => $pemakaian->find($id_pemakaian),
+        ];
+        return view('admin/edit_pemakaian', $data);
+    }
+    public function update_pemakaian($id_pemakaian)
+    {
+        $pemakaian = new PemakaianModel();
+        $pemakaian->save([
+            'id_pemakaian' => $id_pemakaian,
+            'nis' => $this->request->getVar('nis'),
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'kelas' => $this->request->getVar('kelas'),
+            'tanggal' => $this->request->getVar('tanggal'),
+            'jam' => $this->request->getVar('jam'),
+            'lab' => $this->request->getVar('lab'),
+            'no_pc' => $this->request->getVar('no_pc'),
+            'materi_praktek' => $this->request->getVar('materi_praktek')
+        ]);
+        session()->setFlashdata('message', 'Data pemakaian berhasil diubah.');
+        return redirect()->to(base_url('/admin/laporan_pemakaian'));
+    }
+    public function login()
+    {
+        $data = [
+            'title' => 'Login - Sistem Pemakaian Lab',
+        ];
+        return view('admin/login', $data);
+    }
+    public function logout()
+    {
+        $auth = service('authentication');
+        $auth->logout();
+        return redirect()->to('/admin/login');
+    }
+    public function redirect_register()
+    {
+        return view('404');
     }
 }

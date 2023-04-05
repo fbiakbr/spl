@@ -7,19 +7,27 @@ $(document).ready(function () {
             {
                 extend: "excel",
                 className: "btn btn-success",
+                // export options
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6 ,7],
+                }
             },
             {
                 extend: "pdf",
                 className: "btn btn-success",
+                orientation: "portrait",
+                pageSize: "A4",
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6 ,7],
+                },
+                customize: function (doc) {
+                    doc.content[1].table.widths = ["*", "*", "*", "*", "*", "*", "*", "*"];
+                }
             },
             {
                 extend: "print",
                 className: "btn btn-success",
             },
-            {
-                extend: "colvis",
-                className: "btn btn-success",
-            }
         ],
       })
       .buttons()

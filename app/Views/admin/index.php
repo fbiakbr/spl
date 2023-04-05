@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h1 class="card-title text-center">Statistik Harian Pemakaian Lab</h1>
@@ -135,7 +135,6 @@
     const dailyPemakaian = <?= json_encode($dailyPemakaian) ?>;
     // console.log(dailyPemakaian);
     const dataKelas = dailyPemakaian.map((item) => item.kelas);
-    // filter data kelas by unique
     const filterKelas2 = dataKelas.filter((item, index) => {
         return dataKelas.indexOf(item) === index;
     });
@@ -152,7 +151,6 @@
         datasets: [{
             label: 'Data Pemakaian Lab',
             data: dataPemakaianByKelas,
-            // set min value with 0 and max value with 10
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

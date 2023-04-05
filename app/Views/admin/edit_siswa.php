@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Tambah Siswa</h4>
+                <h4 class="card-title">Edit Siswa</h4>
                 <form action="<?= base_url() ?>admin/update_siswa/<?= $siswa['nis'] ?>" method="post">
                     <div class="row">
                         <div class="col-md-4 mb-3">

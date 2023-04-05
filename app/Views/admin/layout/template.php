@@ -35,7 +35,6 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
 
-
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -61,17 +60,19 @@
                         </a>
                     </div>
                 </div>
-
+                <div class="me-auto ms-4">
+                    <h4>Sistem Pemakaian Lab</h4>
+                </div>
                 <div class="d-flex">
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="<?= base_url('/assets/images/users/avatar-6.jpg') ?>" alt="Header Avatar">
-                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                            <img class="rounded-circle header-profile-user" src="<?= base_url('/assets/images/smk.png') ?>" alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1">SMK Ma'arif NU Tirto</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                            <a class="dropdown-item text-danger" href="<?= base_url('admin/logout') ?>"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
                         </div>
                     </div>
                 </div>
