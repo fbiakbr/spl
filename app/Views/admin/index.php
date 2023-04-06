@@ -176,8 +176,8 @@
             responsive: true,
             scales: {
                 y: {
-                    suggestedMin: 0,
-                    suggestedMax: 30,
+                    min: 0,
+                    // suggestedMax: 30,
                 }
             },
         }
