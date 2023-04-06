@@ -102,6 +102,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="<?= base_url('admin/filter_laporan') ?>" class="waves-effect">
+                                <i class="bx bx-book-open"></i>
+                                <span key="t-dashboards">Filter Tanggal Laporan</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="<?= base_url('admin/laporan_pemakaian') ?>" class="waves-effect">
                                 <i class="bx bx-book-bookmark"></i>
                                 <span key="t-dashboards">Laporan Pemakaian</span>

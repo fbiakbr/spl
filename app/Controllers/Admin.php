@@ -169,6 +169,16 @@ class Admin extends BaseController
         session()->setFlashdata('message', 'Data pemakaian berhasil diubah.');
         return redirect()->to(base_url('/admin/laporan_pemakaian'));
     }
+    public function filter_laporan()
+    {
+        $pemakaian = new PemakaianModel();
+        $data = [
+            'title' => 'Laporan Pemakaian Berdasarkan Tanggal',
+            'session' => session(),
+            'pemakaian' => $pemakaian->findAll(),
+        ];
+        return view('admin/filter_laporan', $data);
+    }
     public function login()
     {
         $data = [
