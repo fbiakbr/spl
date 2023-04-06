@@ -68,7 +68,7 @@
                                                     Buka aplikasi dengan klik link di bawah ini.
                                                     <br>
                                                 </p>
-                                                <a class="btn btn-primary" href="http://localhost:8080/input" target="_blank">Aplikasi SPL</a>
+                                                <a class="btn btn-primary" href="<?= base_url('input') ?>" target="_blank">Aplikasi SPL</a>
                                             </div>
                                         </div>
                                     </div>
@@ -193,7 +193,7 @@
                                                 <p class="text-muted">
                                                     Cek data pemakaian yang telah diinput. Jika ada kesalahan, silahkan hubungi admin.
                                                 </p>
-                                                <a class="btn btn-primary" href="http://localhost:8080/data_pemakaian" target="_blank">Data Pemakaian Hari Ini</a>
+                                                <a class="btn btn-primary" href="<?= base_url('data_pemakaian') ?>" target="_blank">Data Pemakaian Hari Ini</a>
                                             </div>
                                         </div>
                                     </div>

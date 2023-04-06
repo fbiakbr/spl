@@ -173,6 +173,8 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Login - Sistem Pemakaian Lab',
+            'session' => session(),
+            'validation' => \Config\Services::validation(),
         ];
         return view('admin/login', $data);
     }

@@ -34,7 +34,7 @@
                         <h1 class="display-2 fw-medium">4<i class="bx bx-buoy bx-spin text-primary display-3"></i>4</h1>
                         <h4 class="text-uppercase">Speech is Silver, Silence is Gold</h4>
                         <div class="mt-5 text-center">
-                            <a class="btn btn-primary waves-effect waves-light" href="<?= base_url('login') ?>">Back to Login</a>
+                            <a class="btn btn-primary waves-effect waves-light" href="<?= base_url('admin') ?>">Back to Login</a>
                         </div>
                     </div>
                 </div>

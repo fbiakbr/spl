@@ -128,6 +128,13 @@
                 ],
                 borderWidth: 1
             }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
     });
 
@@ -170,7 +177,7 @@
             scales: {
                 y: {
                     suggestedMin: 0,
-                    suggestedMax: 100,
+                    suggestedMax: 30,
                 }
             },
         }

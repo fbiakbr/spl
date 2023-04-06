@@ -33,6 +33,7 @@ $routes->get('/', 'Pemakaian::index');
 $routes->get('/input', 'Pemakaian::input_pemakaian');
 $routes->get('/data_pemakaian', 'Pemakaian::data_pemakaian');
 $routes->get('/admin', 'Admin::index', ['filter' => 'login']);
+// $routes->get('/login', 'Admin::login');
 $routes->get('/register', 'Admin::redirect_register');
 
 /*
