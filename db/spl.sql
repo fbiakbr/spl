@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2023 at 05:28 AM
+-- Generation Time: Apr 17, 2023 at 05:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -123,7 +123,14 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (32, '::1', 'fbiakbr@gmail.com', 2, '2023-04-05 16:51:22', 1),
 (33, '127.0.0.1', 'admin', NULL, '2023-04-06 02:15:28', 0),
 (34, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 02:15:34', 1),
-(35, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 02:46:18', 1);
+(35, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 02:46:18', 1),
+(36, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 03:29:15', 1),
+(37, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 03:30:53', 1),
+(38, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 06:33:50', 1),
+(39, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 09:21:07', 1),
+(40, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-11 12:53:16', 1),
+(41, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 02:29:24', 1),
+(42, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 02:35:00', 1);
 
 -- --------------------------------------------------------
 
@@ -224,7 +231,11 @@ CREATE TABLE `pemakaian` (
 
 INSERT INTO `pemakaian` (`id_pemakaian`, `nis`, `nama_siswa`, `kelas`, `tanggal`, `jam`, `lab`, `no_pc`, `materi_praktek`) VALUES
 (40, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-06', '10:01:26', 'Lab TKJ L6', 1, 'Konfigurasi router'),
-(41, 6282, 'AHMAD AZRIL AFIF', 'XI TJKT 1', '2023-04-06', '10:05:51', 'Lab TKJ L6', 1, 'Konfigurasi web server');
+(41, 6282, 'AHMAD AZRIL AFIF', 'XI TJKT 1', '2023-04-06', '10:05:51', 'Lab TKJ L6', 1, 'Konfigurasi web server'),
+(42, 6284, 'ASSEGAF', 'XI TJKT 1', '2023-04-06', '10:31:30', 'Lab TKJ L6', 12, 'Krimping kabel'),
+(43, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-06', '16:21:40', 'Lab TKJ L6', 1, 'A'),
+(44, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-11', '19:53:38', 'Lab TKJ L6', 1, 'A'),
+(45, 6290, 'M FADHIL FERDIANSYAH', 'XI TJKT 1', '2023-04-17', '09:30:14', 'Lab TKJ L6', 1, 'Test');
 
 -- --------------------------------------------------------
 
@@ -440,7 +451,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -470,7 +481,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pemakaian`
 --
 ALTER TABLE `pemakaian`
-  MODIFY `id_pemakaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_pemakaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `users`

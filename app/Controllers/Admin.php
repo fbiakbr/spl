@@ -173,7 +173,7 @@ class Admin extends BaseController
     {
         $pemakaian = new PemakaianModel();
         $data = [
-            'title' => 'Laporan Pemakaian Berdasarkan Tanggal',
+            'title' => 'Filter Tanggal Laporan',
             'session' => session(),
             'pemakaian' => $pemakaian->findAll(),
         ];
@@ -192,7 +192,7 @@ class Admin extends BaseController
     {
         $auth = service('authentication');
         $auth->logout();
-        return redirect()->to('/admin/login');
+        return redirect()->to('/admin');
     }
     public function redirect_register()
     {
