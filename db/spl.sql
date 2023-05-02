@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: May 02, 2023 at 03:30 AM
+=======
+-- Generation Time: Apr 17, 2023 at 05:05 AM
+>>>>>>> 7c19fec980ee7b2303bc3c93d345989460e26c47
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -130,9 +134,13 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (39, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-06 09:21:07', 1),
 (40, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-11 12:53:16', 1),
 (41, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 02:29:24', 1),
+<<<<<<< HEAD
 (42, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 02:35:00', 1),
 (43, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 03:12:35', 1),
 (44, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-05-02 01:17:17', 1);
+=======
+(42, '127.0.0.1', 'fbiakbr@gmail.com', 2, '2023-04-17 02:35:00', 1);
+>>>>>>> 7c19fec980ee7b2303bc3c93d345989460e26c47
 
 -- --------------------------------------------------------
 
@@ -237,11 +245,15 @@ INSERT INTO `pemakaian` (`id_pemakaian`, `nis`, `nama_siswa`, `kelas`, `tanggal`
 (42, 6284, 'ASSEGAF', 'XI TJKT 1', '2023-04-06', '10:31:30', 'Lab TKJ L6', 12, 'Krimping kabel'),
 (43, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-06', '16:21:40', 'Lab TKJ L6', 1, 'A'),
 (44, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-11', '19:53:38', 'Lab TKJ L6', 1, 'A'),
+<<<<<<< HEAD
 (45, 6290, 'M FADHIL FERDIANSYAH', 'XI TJKT 1', '2023-04-17', '09:30:14', 'Lab TKJ L6', 1, 'Test'),
 (46, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-04-17', '10:17:43', 'Lab TKJ L6', 9, 'Test'),
 (47, 6120, 'M KHOIRUL ANAM', 'XI TJKT 2', '2023-05-02', '08:18:50', 'Lab TKJ L6', 12, 'Konfigurasi mikrotik'),
 (48, 6282, 'AHMAD AZRIL AFIF', 'XI TJKT 1', '2023-05-02', '08:20:08', 'Lab TKJ L6', 1, 'Konfigurasi mikrotik'),
 (49, 6283, 'ANGGELI WULAN SAFITRI', 'XI TJKT 1', '2023-05-02', '08:20:44', 'Lab TKJ L6', 8, 'Konfigurasi mikrotik');
+=======
+(45, 6290, 'M FADHIL FERDIANSYAH', 'XI TJKT 1', '2023-04-17', '09:30:14', 'Lab TKJ L6', 1, 'Test');
+>>>>>>> 7c19fec980ee7b2303bc3c93d345989460e26c47
 
 -- --------------------------------------------------------
 
@@ -457,7 +469,11 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
+<<<<<<< HEAD
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+=======
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+>>>>>>> 7c19fec980ee7b2303bc3c93d345989460e26c47
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -487,7 +503,11 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pemakaian`
 --
 ALTER TABLE `pemakaian`
+<<<<<<< HEAD
   MODIFY `id_pemakaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+=======
+  MODIFY `id_pemakaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+>>>>>>> 7c19fec980ee7b2303bc3c93d345989460e26c47
 
 --
 -- AUTO_INCREMENT for table `users`
