@@ -11,7 +11,7 @@
                     *Apabila NIS yang diimport sudah ada di database, maka data akan diupdate.<br>
                     *Pastikan file yang diupload sesuai dengan format yang telah ditentukan.
                 </p>
-
+                <a href="<?= base_url() ?>admin/download_format_siswa" class="btn btn-dark mb-3">Download Format Data Siswa</a>
                 <div>
                     <form action="<?= base_url() ?>admin/save_import_siswa" method="post" enctype="multipart/form-data">
                         <div class="row">

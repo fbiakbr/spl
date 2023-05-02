@@ -173,7 +173,7 @@ class Admin extends BaseController
     {
         $pemakaian = new PemakaianModel();
         $data = [
-            'title' => 'Laporan Pemakaian Berdasarkan Tanggal',
+            'title' => 'Filter Tanggal Laporan',
             'session' => session(),
             'pemakaian' => $pemakaian->findAll(),
         ];
@@ -192,10 +192,17 @@ class Admin extends BaseController
     {
         $auth = service('authentication');
         $auth->logout();
-        return redirect()->to('/admin/login');
+        return redirect()->to('/admin');
     }
     public function redirect_register()
     {
         return view('404');
+    }
+    public function download_format_siswa()
+    {
+        // get file from directory
+        $file = 'uploads/format_data_siswa.xlsx';
+        // download file from directory
+        return $this->response->download($file, null);
     }
 }
