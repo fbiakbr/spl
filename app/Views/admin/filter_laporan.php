@@ -16,7 +16,7 @@
                         <input type="date" name="tanggal" id="tanggal" class="form-control">
                     </div>
                 </div>
-                <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
+                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                     <thead>
                         <tr>
                             <td>No</td>
@@ -27,14 +27,13 @@
                             <td>Jam</td>
                             <td>Lab</td>
                             <td>No PC</td>
-                            <td>Aksi</td>
+                            <td>Nama Guru</td>
                         </tr>
                     </thead>
                     <tbody>
 
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div> <!-- end col -->
@@ -50,31 +49,34 @@
     // console.log(data);
 
     const tanggal = document.getElementById('tanggal');
+    // get data by date
     tanggal.addEventListener('change', function() {
-        const filterData = data.filter(function(item) {
-            return item.tanggal == tanggal.value;
-        });
+        const tgl = this.value;
+        // console.log(tgl);
+        const filtered = data.filter(d => d.tanggal == tgl);
+        // console.log(filtered);
         let html = '';
         let no = 1;
-        filterData.forEach(function(item) {
+        filtered.forEach(f => {
             html += `
                 <tr>
                     <td>${no++}</td>
-                    <td>${item.nis}</td>
-                    <td>${item.nama_siswa}</td>
-                    <td>${item.kelas}</td>
-                    <td>${item.tanggal}</td>
-                    <td>${item.jam}</td>
-                    <td>${item.lab}</td>
-                    <td>${item.no_pc}</td>
-                    <td style="width: 10px;">
-                        <a href="<?= base_url('admin/edit_pemakaian/') ?>${item.id_pemakaian}" class="btn btn-warning"><i class="bx bx-edit"></i></a>
-                        <a href="<?= base_url('admin/hapus_pemakaian/') ?>${item.id_pemakaian}" class="btn btn-danger" onclick="showConfirm()"><i class="bx bx-trash"></i></a>
-                    </td>
+                    <td>${f.nis}</td>
+                    <td>${f.nama_siswa}</td>
+                    <td>${f.kelas}</td>
+                    <td>${f.tanggal}</td>
+                    <td>${f.jam}</td>
+                    <td>${f.lab}</td>
+                    <td>${f.no_pc}</td>
+                    <td>${f.nama_guru}</td>
                 </tr>
             `;
         });
         document.querySelector('tbody').innerHTML = html;
+        // reset tanggal value if filtered is empty
+        if (filtered.length == 0) {
+            this.value = '';
+        }
     });
 </script>
 <?= $this->endSection() ?>

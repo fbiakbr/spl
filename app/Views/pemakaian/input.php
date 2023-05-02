@@ -64,13 +64,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <div class="mb-3">
                                             <label for="tanggal" class="form-label">Tanggal</label>
                                             <input type="text" class="form-control tanggal" id="tanggal" name="tanggal" placeholder="Masukkan Tanggal" readonly required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <div class="mb-3">
                                             <label class="form-label">Jam</label>
                                             <input type="text" class="form-control jam" id="jam" name="jam" placeholder="00:00:00" readonly required>
@@ -78,10 +78,24 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="mb-3">
+                                            <label for="lab" class="form-label">Nama Guru</label>
+                                            <select class="form-select" aria-label="Default select example" id="nama_guru" name="nama_guru" required>
+                                                <option value="">Pilih Nama Guru</option>
+                                                <option value="BAGUS WIJAYANTO">BAGUS WIJAYANTO</option>
+                                                <option value="FURQON ALBAR">FURQON ALBAR</option>
+                                                <option value="M. NURUL HUDA">M. NURUL HUDA</option>
+                                                <option value="DHIYAN IRYADI">DHIYAN IRYADI</option>
+                                                <option value="IMAM GUNAWAN">IMAM GUNAWAN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="mb-3">
                                             <label for="lab" class="form-label">Lab</label>
                                             <select class="form-select" aria-label="Default select example" id="lab" name="lab" required>
                                                 <option value="">Pilih Lab</option>
                                                 <option value="Lab TKJ L6">Lab TKJ L6</option>
+                                                <option value="Lab TKJ L4">Lab TKJ L4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -168,7 +182,7 @@
                 }).then(function() {
                     form.submit();
                 })
-                
+
             }
         });
     </script>

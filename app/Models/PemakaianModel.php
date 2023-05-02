@@ -14,7 +14,7 @@ class PemakaianModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nis', 'nama_siswa', 'kelas', 'tanggal', 'jam', 'lab', 'no_pc', 'materi_praktek'];
+    protected $allowedFields    = ['nis', 'nama_siswa', 'kelas', 'tanggal', 'jam', 'lab', 'nama_guru', 'no_pc', 'materi_praktek'];
 
     // Dates
     protected $useTimestamps = false;

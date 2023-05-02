@@ -144,7 +144,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Febiadi Wisnu Akbar
+                                Design & Develop by <a href="https://github.com/fbiakbr" target="_blank">Febiadi Wisnu Akbar</a>
                             </div>
                         </div>
                     </div>
@@ -250,7 +250,7 @@
 
     <!-- Datatable init js -->
     <script src="<?= base_url('/assets/js/pages/datatables.init.js') ?>"></script>
-    
+
     <!-- Plugins js -->
     <script src="<?= base_url('/assets/libs/dropzone/min/dropzone.min.js') ?>"></script>
 

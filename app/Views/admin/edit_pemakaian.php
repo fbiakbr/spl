@@ -21,11 +21,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-2 mb-3">
                             <label for="nis">Tanggal</label>
                             <input type="date" name="tanggal" id="tanggal" class="form-control" placeholder="Masukkan Tanggal" value="<?= $pemakaian['tanggal'] ?>" required>
                         </div>
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-2 mb-3">
                             <label for="nis">Jam</label>
                             <input type="text" name="jam" id="jam" class="form-control" placeholder="Masukkan Tanggal" value="<?= $pemakaian['jam'] ?>" required>
                             <small>
@@ -33,13 +33,27 @@
                             </small>
                         </div>
                         <div class="col-md-3 mb-3">
+                            <div class="mb-3">
+                                <label for="lab" class="form-label">Nama Guru</label>
+                                <select class="form-select" aria-label="Default select example" id="nama_guru" name="nama_guru" required>
+                                    <option value="">Pilih Nama Guru</option>
+                                    <option value="BAGUS WIJAYANTO">BAGUS WIJAYANTO</option>
+                                    <option value="FURQON ALBAR">FURQON ALBAR</option>
+                                    <option value="M. NURUL HUDA">M. NURUL HUDA</option>
+                                    <option value="DHIYAN IRYADI">DHIYAN IRYADI</option>
+                                    <option value="IMAM GUNAWAN">IMAM GUNAWAN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
                             <label for="nis">Lab</label>
                             <select class="form-select" aria-label="Default select example" id="lab" name="lab" required>
                                 <option value="">Pilih Lab</option>
                                 <option value="Lab TKJ L6">Lab TKJ L6</option>
+                                <option value="Lab TKJ L4">Lab TKJ L4</option>
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="mb-3">
                                 <label for="no_pc" class="form-label">No PC</label>
                                 <input type="text" class="form-control" id="no_pc" name="no_pc" placeholder="Masukkan No PC" value="<?= $pemakaian['no_pc'] ?>" required>

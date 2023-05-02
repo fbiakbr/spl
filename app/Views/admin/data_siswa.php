@@ -43,6 +43,7 @@
         </div>
     </div> <!-- end col -->
 </div>
+
 <script>
     function showConfirm() {
         if (!confirm("Apakah anda yakin ingin menghapus data ini?")) {

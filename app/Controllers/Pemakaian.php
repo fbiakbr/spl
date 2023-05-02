@@ -36,6 +36,7 @@ class Pemakaian extends BaseController
             'tanggal' => $this->request->getPost('tanggal'),
             'jam' => $this->request->getPost('jam'),
             'lab' => $this->request->getPost('lab'),
+            'nama_guru' => $this->request->getPost('nama_guru'),
             'no_pc' => $this->request->getPost('no_pc'),
             'materi_praktek' => $this->request->getPost('materi_praktek'),
         ]);

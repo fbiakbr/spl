@@ -12,7 +12,7 @@
                 <?php endif; ?>
                 <h4 class="card-title">Laporan Pemakaian</h4>
                 <!-- <a href="<?= base_url('admin/cetak_pemakaian') ?>" class="btn btn-primary mb-3">Cetak Data</a> -->
-                <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
+                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                     <thead>
                         <tr>
                             <td>No</td>
@@ -23,6 +23,7 @@
                             <td>Jam</td>
                             <td>Lab</td>
                             <td>No PC</td>
+                            <td>Nama Guru</td>
                             <td>Aksi</td>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                                 <td><?= $p['jam']; ?></td>
                                 <td><?= $p['lab']; ?></td>
                                 <td><?= $p['no_pc']; ?></td>
+                                <td><?= $p['nama_guru']; ?></td>
                                 <td style="width: 10px;">
                                     <a href="<?= base_url('admin/edit_pemakaian/' . $p['id_pemakaian']) ?>" class="btn btn-warning"><i class="bx bx-edit"></i></a>
                                     <a href="<?= base_url('admin/hapus_pemakaian/' . $p['id_pemakaian']) ?>" class="btn btn-danger" onclick="showConfirm()"><i class="bx bx-trash"></i></a>
